@@ -1,0 +1,13 @@
+version: "3.3"
+
+services:
+  stable-diffusion:
+    build: .
+    container_name: stable-diffusion
+    volumes:
+      - .:/app
+    ports:
+      - "7860:7860"
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+      - NVIDIA_DRIVER_CAPABILITIES=all
